@@ -9,16 +9,23 @@
     </head>
     <body>
         <% 
-            String jugador1= request.getParameter("jugador1");
-            String jugada1= request.getParameter("jugada1");
-            String jugador2= request.getParameter("jugador2");
+            String idPartida1= request.getParameter("idpartida1");
+            Partida partida= GestorPartidas.getPartidaPorId(idPartida1);
+            String jugador1= partida.getJugadorA();
+            String jugada1= partida.getJugadaA();
+            String jugador2= request.getParameter("nombreJugador2");
             String jugada2= request.getParameter("jugada2");
             String ganador= GestorPartidas.completarPartida(request.getParameter("idpartida1"), jugador2, jugada2);   
         %>
         
-        <h1><%=ganador%></h1>
-        Jugador1 Humano:<%=jugador1%>,jugada1 <b><%=jugada1%></b><br/>
-        Jugador2 Humano:<%=jugador2%>,jugada2 <b><%=jugada2%></b><br/>
+        <h1>El ganador es: <%=ganador%></h1>
+        <h2>Usted lleva ganadas: <%= GestorPartidas.ganadasPorUsuario(ganador)%> partidas.</h2>
+        Jugador1:<%=jugador1%>, jugada1 <b><%=jugada1%></b><br/>
+        Jugador2:<%=jugador2%>, jugada2 <b><%=jugada2%></b><br/>
+        <br/>
+        <a href="jugarContraLaMaquina3.jsp">
+            Inicio
+        </a>
         
     </body>
 </html>

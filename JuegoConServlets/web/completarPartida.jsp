@@ -11,7 +11,7 @@
             <%String idpartida1= request.getParameter("id");%>
             
             <form action="/resultado.jsp">
-                <input type="hidden" name="idpartida1" value="${idpartida1}">
+                <input type="hidden" name="idpartida1" value="<%=idpartida1%>">
                 <label for="nombreJugador">Nombre:</label><input name="nombreJugador2" required> <br/>
                 <label for="jugada">Jugada:</label><br/>
                 <input type="radio" name="jugada2" value="PIEDRA" required>PIEDRA<br/>

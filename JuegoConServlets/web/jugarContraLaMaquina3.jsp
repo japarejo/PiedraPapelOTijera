@@ -12,9 +12,9 @@
         Partidas creadas:
         <ul>
             <%for(Partida opcion:GestorPartidas.getComenzadas()){%>
-                <li><%=opcion.getFechaCreacion()%>, <%=opcion.getJugadorA()%>
+                <li><%=opcion.getFechaCreacion()%>, <%=opcion.getJugadorA()%>. 
                     <a href="completarPartida.jsp?id=<%=opcion.getId()%>">
-                       Completar
+                         Completar partida
                     </a>
                     
                 </li>
