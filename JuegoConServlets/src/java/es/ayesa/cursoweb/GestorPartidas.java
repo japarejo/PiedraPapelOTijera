@@ -65,7 +65,7 @@ public class GestorPartidas {
     }
     
     
-    private static long ganadasPorUsuario(String usuario){
+    public static long ganadasPorUsuario(String usuario){
         return terminadas.stream()
                 .map(p -> p.getGanador())
                 .filter(p -> p.equals(usuario))                
